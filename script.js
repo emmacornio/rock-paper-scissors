@@ -69,27 +69,28 @@ let playerPlay=()=>{
 }
 //
 //round function 
-let round=()=>{
-    //calls for player and computer play
-    //const playerChoice=playerPlay();
-   // const computerChoice=computerPlay();
-   //let computerChoice=new choice;
+let playRound=()=>{
+//calls for player and computer play
+   let victory; 
    const computerChoice=computerPlay()
    const playerChoice=playerPlay();
-
-    console.log(`player chose ${playerChoice.selection} | computer chose ${computerChoice.selection}`);
+   console.log(`player chose ${playerChoice.selection} | computer chose ${computerChoice.selection}`);
 //compare the values of the selections
+//log the result of the round
 switch(playerChoice.value){
     case 1:
         switch(computerChoice.value){
             case 1:
                 console.log(`It's a match! ${playerChoice.selection} matches ${computerChoice.selection}`);
+                victory=0;
                 break;
             case 2:
                 console.log(` You lose! ${computerChoice.selection} beats ${playerChoice.selection} `);
+                victory=-1;
                 break;
             case 3:
                 console.log(`You win! ${playerChoice.selection} beats ${computerChoice.selection}`);
+                victory=1;
                 break;
         }
         break;
@@ -97,12 +98,15 @@ switch(playerChoice.value){
         switch(computerChoice.value){
             case 1:
                 console.log(`You win! ${playerChoice.selection} beats ${computerChoice.selection}`);
+                victory=1;
                 break;
             case 2:
                 console.log(`It's a  match! ${playerChoice.selection} matches ${computerChoice.selection}`);
+                victory=0;
                 break;
             case 3:
                 console.log(`You lose! ${computerChoice.selection} beats ${playerChoice.selection}`);
+                victory=-1;
                 break;
         }
         break;
@@ -110,30 +114,50 @@ switch(playerChoice.value){
         switch(computerChoice.value){
             case 1:
                 console.log(`You lose! ${computerChoice.selection} beats ${playerChoice.selection}`);
+                victory=-1;
                 break;
             case 2:
                 console.log(`You win! ${playerChoice.selection} beats ${computerChoice.selection}`);
+                victory=1;
                 break;
             case 3:
                 console.log(`It's a match!${playerChoice.selection} matches ${computerChoice.selection}`);
+                victory=0;
                 break;
         }
         break;
+        
+}
+   // console.log(victory);   
+    return victory;
+}
 
+//game function
+let playGame=()=>{
+    let victoryTally=0;
+//plays 5 rounds
+    for(let i=0;i<5;i++){
+        victoryTally+=playRound();
+        console.log('___________________________')
+        //console.log(victoryTally);
+//recieves victory value each round
+    }
+    switch(true){
+//if at the end the value is positive the plaver wins
+        case(victoryTally>0):
+        console.log('Player Wins!');
+        break;
+//if is negative the player looses
+        case(victoryTally<0):
+        console.log('Player Loses');
+        break;
+//is is 0 is a match
+        case(victoryTally===0):
+        console.log('It\'s a match!');
+        break;
+    }
+//at the end logs the winner
 }
-//log the result of the round
-}
-//calls for player and computer play
-//compare the values of the selections
-//log the result of the round
-//return 
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
