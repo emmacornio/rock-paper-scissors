@@ -81,7 +81,7 @@ switch(playerChoice.value){
     case 1:
         switch(computerChoice.value){
             case 1:
-                console.log(`It's a match! ${playerChoice.selection} matches ${computerChoice.selection}`);
+                console.log(`It's a tie! ${playerChoice.selection} matches ${computerChoice.selection}`);
                 victory=0;
                 break;
             case 2:
@@ -101,7 +101,7 @@ switch(playerChoice.value){
                 victory=1;
                 break;
             case 2:
-                console.log(`It's a  match! ${playerChoice.selection} matches ${computerChoice.selection}`);
+                console.log(`It's a  tie! ${playerChoice.selection} matches ${computerChoice.selection}`);
                 victory=0;
                 break;
             case 3:
@@ -121,7 +121,7 @@ switch(playerChoice.value){
                 victory=1;
                 break;
             case 3:
-                console.log(`It's a match!${playerChoice.selection} matches ${computerChoice.selection}`);
+                console.log(`It's a tie!${playerChoice.selection} matches ${computerChoice.selection}`);
                 victory=0;
                 break;
         }
