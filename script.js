@@ -44,7 +44,8 @@ let playerPlay=()=>{
     str=prompt("Rock, Paper or Scissors?");
 //has to be case insensitive
 //stores choice
-    playerChoice.selection=(str.charAt(0).toUpperCase()+str.slice(1).toLowerCase());
+    playerChoice.selection=(str.charAt(0).toUpperCase()
+            +str.slice(1).toLowerCase());
     switch(true){
         case(playerChoice.selection=='Rock'):
         playerChoice.value=1;
@@ -68,28 +69,33 @@ let playerPlay=()=>{
     return playerChoice;
 }
 //
+//
 //round function 
 let playRound=()=>{
 //calls for player and computer play
-   let victory; 
-   const computerChoice=computerPlay()
-   const playerChoice=playerPlay();
-   console.log(`player chose ${playerChoice.selection} | computer chose ${computerChoice.selection}`);
+    let victory; 
+    const computerChoice=computerPlay()
+    const playerChoice=playerPlay();
+    console.log(`player chose ${playerChoice.selection} | 
+            computer chose ${computerChoice.selection}`);
 //compare the values of the selections
 //log the result of the round
 switch(playerChoice.value){
     case 1:
         switch(computerChoice.value){
             case 1:
-                console.log(`It's a tie! ${playerChoice.selection} matches ${computerChoice.selection}`);
+                console.log(`It's a tie! ${playerChoice.selection} 
+                         matches ${computerChoice.selection}`);
                 victory=0;
                 break;
             case 2:
-                console.log(` You lose! ${computerChoice.selection} beats ${playerChoice.selection} `);
+                console.log(` You lose! ${computerChoice.selection}
+                         beats ${playerChoice.selection} `);
                 victory=-1;
                 break;
             case 3:
-                console.log(`You win! ${playerChoice.selection} beats ${computerChoice.selection}`);
+                console.log(`You win! ${playerChoice.selection} beats 
+                        ${computerChoice.selection}`);
                 victory=1;
                 break;
         }
@@ -97,15 +103,18 @@ switch(playerChoice.value){
     case 2:
         switch(computerChoice.value){
             case 1:
-                console.log(`You win! ${playerChoice.selection} beats ${computerChoice.selection}`);
+                console.log(`You win! ${playerChoice.selection} 
+                        beats ${computerChoice.selection}`);
                 victory=1;
                 break;
             case 2:
-                console.log(`It's a  tie! ${playerChoice.selection} matches ${computerChoice.selection}`);
+                console.log(`It's a  tie! ${playerChoice.selection} 
+                         matches ${computerChoice.selection}`);
                 victory=0;
                 break;
             case 3:
-                console.log(`You lose! ${computerChoice.selection} beats ${playerChoice.selection}`);
+                console.log(`You lose! ${computerChoice.selection} 
+                        beats ${playerChoice.selection}`);
                 victory=-1;
                 break;
         }
@@ -113,15 +122,18 @@ switch(playerChoice.value){
     case 3:
         switch(computerChoice.value){
             case 1:
-                console.log(`You lose! ${computerChoice.selection} beats ${playerChoice.selection}`);
+                console.log(`You lose! ${computerChoice.selection} 
+                        beats ${playerChoice.selection}`);
                 victory=-1;
                 break;
             case 2:
-                console.log(`You win! ${playerChoice.selection} beats ${computerChoice.selection}`);
+                console.log(`You win! ${playerChoice.selection} 
+                        beats ${computerChoice.selection}`);
                 victory=1;
                 break;
             case 3:
-                console.log(`It's a tie!${playerChoice.selection} matches ${computerChoice.selection}`);
+                console.log(`It's a tie!${playerChoice.selection} 
+                        matches ${computerChoice.selection}`);
                 victory=0;
                 break;
         }
