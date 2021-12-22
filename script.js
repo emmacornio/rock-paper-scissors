@@ -1,5 +1,13 @@
 //declare player and computer choices as objects
-//2 parameters choice and value
+//2 parameters choice and value1
+const options = document.querySelectorAll(".options");
+
+Array.from(options).forEach((option) => {
+	option.firstElementChild.addEventListener("click", () => {
+		console.log(option.textContent);
+	});
+});
+
 class choice {
 	constructor(selection, value) {
 		this.selection = selection;
@@ -76,7 +84,7 @@ let playRound = () => {
 	const computerChoice = computerPlay();
 	const playerChoice = playerPlay();
 	console.log(`player chose ${playerChoice.selection} | 
-            computer chose ${computerChoice.selection}`);
+				computer chose ${computerChoice.selection}`);
 	//compare the values of the selections
 	//log the result of the round
 	switch (playerChoice.value) {
@@ -84,7 +92,7 @@ let playRound = () => {
 			switch (computerChoice.value) {
 				case 1:
 					console.log(`It's a tie! ${playerChoice.selection} 
-                         matches ${computerChoice.selection}`);
+							matches ${computerChoice.selection}`);
 					victory = 0;
 					break;
 				case 2:
@@ -95,7 +103,7 @@ let playRound = () => {
 					break;
 				case 3:
 					console.log(`You win! ${playerChoice.selection} beats 
-                        ${computerChoice.selection}`);
+							${computerChoice.selection}`);
 					victory = 1;
 					break;
 			}
@@ -104,17 +112,17 @@ let playRound = () => {
 			switch (computerChoice.value) {
 				case 1:
 					console.log(`You win! ${playerChoice.selection} 
-                        beats ${computerChoice.selection}`);
+							beats ${computerChoice.selection}`);
 					victory = 1;
 					break;
 				case 2:
 					console.log(`It's a  tie! ${playerChoice.selection} 
-                         matches ${computerChoice.selection}`);
+							matches ${computerChoice.selection}`);
 					victory = 0;
 					break;
 				case 3:
 					console.log(`You lose! ${computerChoice.selection} 
-                        beats ${playerChoice.selection}`);
+							beats ${playerChoice.selection}`);
 					victory = -1;
 					break;
 			}
@@ -123,17 +131,17 @@ let playRound = () => {
 			switch (computerChoice.value) {
 				case 1:
 					console.log(`You lose! ${computerChoice.selection} 
-                        beats ${playerChoice.selection}`);
+							beats ${playerChoice.selection}`);
 					victory = -1;
 					break;
 				case 2:
 					console.log(`You win! ${playerChoice.selection} 
-                        beats ${computerChoice.selection}`);
+							beats ${computerChoice.selection}`);
 					victory = 1;
 					break;
 				case 3:
 					console.log(`It's a tie!${playerChoice.selection} 
-                        matches ${computerChoice.selection}`);
+							matches ${computerChoice.selection}`);
 					victory = 0;
 					break;
 			}
@@ -144,31 +152,31 @@ let playRound = () => {
 };
 
 //game function
-let playGame = () => {
-	let victoryTally = 0;
-	//plays 5 rounds
-	for (let i = 0; i < 5; i++) {
-		victoryTally += playRound();
-		console.log("___________________________");
-		//console.log(victoryTally);
-		//recieves victory value each round
-	}
-	switch (true) {
-		//if at the end the value is positive the plaver wins
-		case victoryTally > 0:
-			console.log("Player Wins!");
-			break;
-		//if is negative the player looses
-		case victoryTally < 0:
-			console.log("Player Loses");
-			break;
-		//is is 0 is a match
-		case victoryTally === 0:
-			console.log("It's a match!");
-			break;
-	}
-	//at the end logs the winner
-};
+// let playGame = () => {
+// 	let victoryTally = 0;
+// 	//plays 5 rounds
+// 	for (let i = 0; i < 5; i++) {
+// 		victoryTally += playRound();
+// 		console.log("___________________________");
+// 		//console.log(victoryTally);
+// 		//recieves victory value each round
+// 	}
+// 	switch (true) {
+// 		//if at the end the value is positive the plaver wins
+// 		case victoryTally > 0:
+// 			console.log("Player Wins!");
+// 			break;
+// 		//if is negative the player looses
+// 		case victoryTally < 0:
+// 			console.log("Player Loses");
+// 			break;
+// 		//is is 0 is a match
+// 		case victoryTally === 0:
+// 			console.log("It's a match!");
+// 			break;
+// 	}
+// 	//at the end logs the winner
+// };
 //
 //
 //

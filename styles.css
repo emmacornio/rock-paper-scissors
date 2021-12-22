@@ -1,0 +1,13 @@
+#header {
+	text-align: center;
+}
+
+#main-game {
+	display: flex;
+	justify-content: space-around;
+}
+
+.option-image {
+	height: 50px;
+	width: auto;
+}
