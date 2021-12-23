@@ -1,0 +1,23 @@
+#header {
+	text-align: center;
+}
+
+#main-game {
+	display: flex;
+	justify-content: space-around;
+}
+
+.option-image {
+	height: 50px;
+	width: auto;
+}
+.result,
+#game-result,
+#round-result,
+.round {
+	text-align: center;
+}
+.options a {
+	text-decoration: none;
+	color: black;
+}

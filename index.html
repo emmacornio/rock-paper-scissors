@@ -8,5 +8,48 @@
 		<link rel="stylesheet" href="./styles.css" />
 		<script src="./script.js" defer></script>
 	</head>
-	<body></body>
+	<body>
+		<header id="header">
+			<h1 id="header-text">Rock, Paper, Scissors!</h1>
+			<p>play against a computer!</p>
+		</header>
+		<main id="main-game">
+			<div class="tally">
+				<p class="counter">0</p>
+				<p>Player</p>
+			</div>
+			<div class="options">
+				<a href="#"
+					><img src="./images/rock.png" alt="Rock" class="option-image" />
+					<p>Rock</p>
+				</a>
+				<br />
+			</div>
+			<div class="options">
+				<a href="#"
+					><img src="./images/paper.png" alt="Paper" class="option-image" />
+					<p>Paper</p></a
+				>
+			</div>
+			<div class="options">
+				<a href="#"
+					><img
+						src="./images/scissors.png"
+						alt="Scissors"
+						class="option-image"
+					/>
+					<p>Scissors</p>
+				</a>
+			</div>
+			<div class="tally">
+				<p class="counter">0</p>
+				<p>Computer</p>
+			</div>
+		</main>
+		<div id="result">
+			<p id="game-result">Currently Playing</p>
+			<p class="round"></p>
+			<p id="round-result"></p>
+		</div>
+	</body>
 </html>
