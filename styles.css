@@ -11,3 +11,13 @@
 	height: 50px;
 	width: auto;
 }
+.result,
+#game-result,
+#round-result,
+.round {
+	text-align: center;
+}
+.options a {
+	text-decoration: none;
+	color: black;
+}
